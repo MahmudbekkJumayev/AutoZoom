@@ -7,41 +7,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: <Dashborad />,
-      },
-      {
-        path: "/brands",
-        element: <Brand />,
-      },
-      {
-        path: "/settings",
-        element: <Settings />,
-      },
-      {
-        path: "/models",
-        element: <Models />,
-      },
-      {
-        path: "/locations",
-        element: <Locations />,
-      },
-      {
-        path: "/cities",
-        element: <Cities />,
-      },
-      {
-        path: "/cars",
-        element: <Cars />,
-      },
-    ],
+    children: [],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
+  {},
 ]);
 
 export default router;
