@@ -1,6 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(2, 0, 36, 1) 49%,
+    rgba(2, 0, 36, 0.8100490196078431) 68%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+.container {
+  margin: 0 auto;
+}
+
 .container{
     max-width: 1200px;
     width: 90%;
