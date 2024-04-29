@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import Carousel from "../components/Carousel/Carousel";
+import MainCarousel from "../components/Carousel/MainCarousel";
 
 const Layout = () => {
   return (
@@ -12,7 +12,7 @@ const Layout = () => {
       </div>
       <main>
         <Header />
-        <Carousel/>
+        <MainCarousel />
       </main>
       <div>
         <Footer />
