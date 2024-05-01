@@ -3,6 +3,7 @@ import navLogo from "../../assets/icons/autozoom.svg";
 import engFlag from "../../assets/images/engFlagg.jpg";
 import rusFlag from "../../assets/images/russianFlag.png";
 import { IoSearchSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -51,13 +52,13 @@ const Navbar = () => {
             <a href="">Services</a>
           </li>
           <li className="text-[18px] font-medium text-white">
-            <a href="">About Us</a>
+            <Link to="/aboutUs">About Us</Link>
           </li>
           <li className="text-[18px] font-medium text-white">
-            <a href="">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="text-[18px] font-medium text-white">
-            <a href="">Blog</a>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
         <a
