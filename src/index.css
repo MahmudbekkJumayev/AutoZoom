@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -16,10 +15,4 @@ body {
 
 .container {
   margin: 0 auto;
-}
-
-.container{
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
 }

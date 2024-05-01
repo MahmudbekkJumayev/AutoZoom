@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import img1 from "../../assets/images/header2.png";
 import img2 from "../../assets/images/header3.png";
 import img3 from "../../assets/images/header4.png";
@@ -6,10 +7,12 @@ import img4 from "../../assets/images/header5.png";
 import { Carousel, initTWE } from "tw-elements";
 
 const Header = () => {
-  initTWE({ Carousel });
+  useEffect(() => {
+    initTWE({ Carousel });
+  }, []);
   return (
-    <div>
-      <div>
+    <div className="my-[40px]">
+      <div className="my-[40px]">
         <h3 className="lg:text-[35px] text-gray-100 lg:font-semibold text-center">
           TOP LUXURY CAR
         </h3>
