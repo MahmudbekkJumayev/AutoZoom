@@ -32,11 +32,11 @@ const Navbar = () => {
         </span>
       </div>
       <div>
-        <a href="">
+        <a href="/">
           <img
             src={navLogo}
             className="w-[130px] h-[140px] object-fill ml-[330px]"
-            alt=""
+            alt="/"
           />
         </a>
       </div>
