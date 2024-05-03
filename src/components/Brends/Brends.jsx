@@ -32,8 +32,8 @@ const Brends = () => {
         <h4 className="text-[35px] text-gray-100 font-semibold">Brands</h4>
         <div>
           <Swiper
-            slidesPerView={4} // Show 4 slides initially
-            spaceBetween={10}
+            slidesPerView={2}
+            spaceBetween={5}
             loop={true}
             aria-colcount={2}
             pagination={{
@@ -44,15 +44,7 @@ const Brends = () => {
             className="mySwiper"
           >
             {brands.map((item) => (
-              <SwiperSlide>
-                <div className="w-[300px] h-[250px]" key={item.key}>
-                  <img src={`${urlimg}${item.image_src}`} alt="" />
-                  <p>{item.title}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-            {brands.map((item) => (
-              <SwiperSlide>
+              <SwiperSlide key={item.id}>
                 <div className="w-[300px] h-[250px]" key={item.key}>
                   <img src={`${urlimg}${item.image_src}`} alt="" />
                   <p>{item.title}</p>
