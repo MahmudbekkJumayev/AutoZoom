@@ -66,12 +66,12 @@ const items = [
 ];
 const Faq = () => {
   return (
-    <div className="faq">
-      <div className="faq-box container_acb">
+    <div className="faq container">
+      <div className="faq-box ">
         <div className="faq-title">
           <h3>FAQ</h3>
         </div>
-        <div className="faq-item_box">
+        <div className="faq-item_box w-[100%]">
           <Collapse accordion items={items} />
         </div>
       </div>

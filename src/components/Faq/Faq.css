@@ -1,34 +1,34 @@
-.faq{
-   .faq-box{
-        .faq-title{
-            margin: 50px 0;
-            & h3{
-                font-size: 36px;
-                color: #fff;
-                font-weight: 700;
+.faq {
+  .faq-box {
+    .faq-title {
+      margin: 50px 0;
+      & h3 {
+        font-size: 36px;
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+    .faq-item_box {
+      max-width: 100%;
+      .ant-collapse {
+        .ant-collapse-item {
+          .ant-collapse-header {
+            & span {
+              font-size: 24px;
+              color: #fff;
+              font-weight: 700;
             }
-        }
-        .faq-item_box{
-            max-width: 1000px;
-            .ant-collapse{
-                .ant-collapse-item{
-                    .ant-collapse-header{
-                        & span{
-                            font-size: 24px;
-                            color: #fff;
-                            font-weight: 700;
-                        }
-                    }
-                    .ant-collapse-content{
-                        background-color: rgb(14, 14, 66);
-                        & p{
-                            font-size: 18px;
-                            font-weight: 500;
-                            color: #fff;
-                        }
-                    }
-                }
+          }
+          .ant-collapse-content {
+            background-color: rgb(14, 14, 66);
+            & p {
+              font-size: 18px;
+              font-weight: 500;
+              color: #fff;
             }
+          }
         }
-   } 
+      }
+    }
+  }
 }
