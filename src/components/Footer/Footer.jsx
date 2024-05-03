@@ -6,8 +6,8 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="container flex items-center">
-      <div>
+    <div className="container flex flex-col md:flex-row md:items-center">
+      <div className="md:mr-10">
         <span>
           <img src={footerLogo} className="w-[170px] h-[170px]" alt="" />
         </span>
@@ -19,15 +19,15 @@ const Footer = () => {
             RENTAL IN
           </h4>
           <h4 className="text-[25px] text-warning-100 font-semibold">DUBAI</h4>
-          <p className="text-[15px] text-gray-400 font-medium w-[250px] my-5">
+          <p className="text-[15px] text-gray-400 font-medium md:w-[250px] my-5">
             Rent sports and luxury cars directly without intermediaries. Rent a
             car in Dubai with Auto Zoom Car Rental - safety and driving pleasure
           </p>
         </span>
       </div>
-      {/* footer malumot */}
-      <div>
-        <div className="flex justify-evenly items-start gap-10">
+      {/* footer information */}
+      <div className="mt-5 md:mt-0">
+        <div className="flex flex-col md:flex-row justify-evenly md:items-start gap-10">
           <div>
             <h4 className="text-[20px] text-warning-100 font-semibold">Cars</h4>
           </div>

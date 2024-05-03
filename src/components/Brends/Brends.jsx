@@ -9,6 +9,7 @@ const Brends = () => {
       .get("https://autoapi.dezinfeksiyatashkent.uz/api/brands")
       .then((response) => {
         setBrands(response.data.data);
+        console.log(response.data);
       })
       .catch((err) => {
         Toast.error(err.message);
@@ -23,7 +24,7 @@ const Brends = () => {
   const data = brands.map((item, index) => ({
     key: index,
     name: item.title,
-    images: item.images,
+    images: item.images_src,
   }));
 
   return (
