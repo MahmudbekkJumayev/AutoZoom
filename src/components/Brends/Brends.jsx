@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios";
+import axios from "axios"
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
