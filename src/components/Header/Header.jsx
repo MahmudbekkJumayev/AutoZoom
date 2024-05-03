@@ -13,10 +13,10 @@ const Header = () => {
   return (
     <div className="my-[40px]">
       <div className="my-[40px]">
-        <h3 className="lg:text-[35px] text-gray-100 lg:font-semibold text-center">
+        <h3 className="lg:text-[35px] md:text-[32px] sm:text-[30px] ss:text-[29px] xs:text-[28px] text-gray-100 md:font-semibold xs:font-bold text-center">
           TOP LUXURY CAR
         </h3>
-        <h3 className="lg:text-[35px] text-gray-100 lg:font-semibold text-center">
+        <h3 className="lg:text-[35px] md:text-[32px] sm:text-[30px] ss:text-[29px] xs:text-[28px] text-gray-100 md:font-semibold xs:font-bold text-center">
           RENTAL DUBAI
         </h3>
         <p className="lg:text-[15px] text-gray-100 lg:font-normal text-center">
@@ -67,7 +67,7 @@ const Header = () => {
           </div>
         </div>
         {}
-        <div className="flex justify-center items-center gap-96">
+        <div className="flex justify-center items-center md:gap-96 sm:gap-80 ss:gap-72 xs:gap-40">
           <button
             class=" bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
             type="button"
