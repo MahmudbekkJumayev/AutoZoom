@@ -9,7 +9,7 @@
             }
         }
         .faq-item_box{
-            max-width: 1000px;
+            max-width: 100%;
             .ant-collapse{
                 .ant-collapse-item{
                     .ant-collapse-header{
