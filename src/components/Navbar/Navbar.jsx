@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import navLogo from "../../assets/icons/autozoom.svg";
 import engFlag from "../../assets/images/engFlagg.jpg";
 import rusFlag from "../../assets/images/russianFlag.png";
-import { useTranslation } from "react-i18next";
 
-const Navbar = ({ changeLang }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
 
   const toggleMenu = () => {
@@ -18,32 +18,21 @@ const Navbar = ({ changeLang }) => {
     setIsOpen(false);
   };
 
-  const changeLangHandler = (e) => {
-    changeLang(e.target.value);
-  };
-
   return (
     <>
       <div className="container flex justify-between items-center">
         <div className="flex justify-center items-center gap-5 top-0 ">
-          <span
-            onClick={changeLangHandler}
-            className="flex justify-center items-center  gap-3"
-          >
-            <button onClick={() => changeLang("uz")}>
-              <img
-                src={rusFlag}
-                className="w-9 h-6 cursor-pointer rounded-md"
-                alt="Russian"
-              />
-            </button>
-            <button onClick={() => changeLang("en")}>
-              <img
-                src={engFlag}
-                className="w-9 h-6 cursor-pointer rounded-md"
-                alt="English"
-              />
-            </button>
+          <span className="flex justify-center items-center  gap-3">
+            <img
+              src={rusFlag}
+              className="w-9 h-6 cursor-pointer rounded-md"
+              alt="Russian"
+            />
+            <img
+              src={engFlag}
+              className="w-9 h-6 cursor-pointer rounded-md"
+              alt="English"
+            />
           </span>
           <div className="w-[350px] hidden md:block">
             <span className="block">
@@ -65,7 +54,7 @@ const Navbar = ({ changeLang }) => {
           <a href="/">
             <img
               src={navLogo}
-              className="lg:w-48 lg:h-48 md:w-44 md:h-44  sm:w-40 sm:h-40 ss:w-36 ss:h-36 xs:w-32 xs:h-32   object-fill  "
+              className="lg:w-52 lg:h-52 md:w-48 md:h-48  sm:w-44 sm:h-44 ss:w-44 ss:h-44 xs:w-44 xs:h-44   object-fill  "
               alt="Autozoom"
             />
           </a>
@@ -73,10 +62,7 @@ const Navbar = ({ changeLang }) => {
         <div className="flex items-center">
           {/* Burger menu */}
           <div className="relative">
-            <div
-              className="block md:hidden cursor-pointer"
-              onClick={toggleMenu}
-            >
+            <div className="block md:hidden" onClick={toggleMenu}>
               {isOpen ? (
                 <IoCloseSharp color="white" className="w-[40px] h-[40px]" />
               ) : (
@@ -92,8 +78,23 @@ const Navbar = ({ changeLang }) => {
                 <Link
                   className="md:text-[17px]  text-gray-100  hover:text-blue-300"
                   to="/cars"
+<<<<<<<<< Temporary merge branch 1
+
+                  className="md:text-[20px]  text-gray-100  hover:text-blue-300"
+                  to="/cars"
+
+=========
+>>>>>>>>> Temporary merge branch 2
                 >
-                  {t("cars")}
+                  Cars
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="md:text-[22px] text-gray-100  hover:text-blue-300"
+                  to="/"
+                >
+                  Brand
                 </Link>
               </li>
               <li>
@@ -101,41 +102,33 @@ const Navbar = ({ changeLang }) => {
                   className="md:text-[17px] text-gray-100  hover:text-blue-300"
                   to="/"
                 >
-                  {t("brand")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="md:text-[17px] text-gray-100  hover:text-blue-300"
-                  to="/services"
-                >
-                  {t("service")}
+                  Services
                 </Link>
               </li>
             </ul>
             <ul className="flex gap-4">
               <li>
                 <Link
-                  className="md:text-[17px] text-gray-100 hover:text-blue-300"
+                  className="md:text-[22px] text-gray-100 hover:text-blue-300"
                   to="/aboutUs"
                 >
-                  {t("aboutUs.nav")}
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  className="md:text-[17px] text-gray-100  hover:text-blue-300"
+                  className="md:text-[22px] text-gray-100  hover:text-blue-300"
                   to="/contact"
                 >
-                  {t("contacts.nav")}
+                  Contact
                 </Link>
               </li>
               <li>
                 <Link
-                  className="md:text-[17px]  text-gray-100  hover:text-blue-300"
+                  className="md:text-[22px]  text-gray-100  hover:text-blue-300"
                   to="/blog"
                 >
-                  {t("blogs")}
+                  Blog
                 </Link>
               </li>
             </ul>
