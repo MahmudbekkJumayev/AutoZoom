@@ -30,20 +30,18 @@ const Contact = () => {
               <img src={mailSvg} alt="svgimage" />
               <span>office@autozoomrental.com</span>
             </div>
-          
-          </div>
-          <div>
-          {/* <div
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2421.690976234712!2d1.2958037!3d52.6294283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3e7a8db78d9%3A0xb2018ea534f10978!2zNDYgTG9uZG9uIFN0LCBOb3J3aWNoIE5SMiAxTEEsINCS0LXQu9C40LrQvtCx0YDQuNGC0LDQvdC40Y8!5e0!3m2!1sru!2s!4v1714656996474!5m2!1sru!2s"
-              width="600"
-              height="450"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></div> */}
           </div>
         </div>
+
+          <iframe
+            src="https://yandex.uz/map-widget/v1/?from=mapframe&ll=55.172133%2C25.100102&mode=search&oid=199521481701&ol=biz&sll=69.284695%2C41.337148&sspn=0.045147%2C0.019989&text=dubai%20car%20arenda&z=11.88"
+            width="100%"
+            height="400"
+            frameborder="1"
+            allowfullscreen="true"
+            style={{ position: "relative", borderRadius:"15px" }}
+          ></iframe>
+       
       </div>
     </div>
   );
