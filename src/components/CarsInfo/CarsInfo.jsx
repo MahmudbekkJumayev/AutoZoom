@@ -19,7 +19,7 @@ export default function CarsInfo() {
             .get(`https://autoapi.dezinfeksiyatashkent.uz/api/cars/8bcdc62e-c51c-4ff8-8aa8-bf654d09cd25`)
             .then((response) => {
                 const carData = response.data.data;
-
+                console.log(carData.car_images);
                 if (carData && typeof carData === 'object') {
                   // Convert object to array with a single item
                   setcars([carData]);
@@ -32,6 +32,23 @@ export default function CarsInfo() {
                 setOneCar([]);
             });
     }
+    // const getImages = () => {
+    //     axios
+    //         .get(`https://autoapi.dezinfeksiyatashkent.uz/api/cars/8bcdc62e-c51c-4ff8-8aa8-bf654d09cd25`)
+    //         .then((response) => {
+    //             const carData = response.data.data;
+    //             if (carData && typeof carData === 'object') {
+    //               // Convert object to array with a single item
+    //               setcars([carData]);
+    //             } else {
+    //               setcars([]); // Set empty array if response is not as expected
+    //             }
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //             setOneCar([]);
+    //         });
+    // }
     useEffect(() => {
         getCars();
         console.log(cars);
@@ -56,12 +73,13 @@ export default function CarsInfo() {
                         {cars &&
                             cars.map((item, index) => (
                                <>
-                                <SwiperSlide key={index}>
-                                    <img src={`${urlimg}${item.car_images[0].image.src}`} alt={`Car ${index}`} />
-                                </SwiperSlide>
-                                <SwiperSlide key={index}>
-                                    <img src={`${urlimg}${item.city.image_src}`} alt={`Car ${index}`} />
-                                </SwiperSlide>
+                             {
+                                item.car_images.map((item,index)=>(
+                                    <SwiperSlide key={index}>
+                                    <img src={`${urlimg}${item.image.src}`} alt={`Car ${index}`} />
+                                </SwiperSlide>      
+                                ))  
+                             }
                                </>
                                 
                             ))}
