@@ -60,7 +60,10 @@ const Navbar = () => {
         <div className="flex items-center">
           {/* Burger menu */}
           <div className="relative">
-            <div className="block md:hidden" onClick={toggleMenu}>
+            <div
+              className="block md:hidden cursor-pointer"
+              onClick={toggleMenu}
+            >
               {isOpen ? (
                 <IoCloseSharp color="white" className="w-[40px] h-[40px]" />
               ) : (

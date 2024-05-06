@@ -1,10 +1,27 @@
 import React from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import footerLogo from "../../assets/icons/autozoom.svg";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
+import Item from "antd/es/list/Item";
 
 const Footer = () => {
+  const [categories, setCategories] = useState([]);
+  const getCategories = () => {
+    axios
+      .get("https://autoapi.dezinfeksiyatashkent.uz/api/categories")
+      .then((response) => {
+        setCategories(response.data.data);
+      })
+      .catch((err) => {
+        Toast.error(err.message);
+      });
+  };
+  useEffect(() => {
+    getCategories();
+  }, []);
   return (
     <div className="container flex flex-col md:flex-row md:items-center">
       <div className="md:mr-10">
@@ -30,6 +47,15 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-evenly md:items-start gap-10">
           <div>
             <h4 className="text-[20px] text-warning-100 font-semibold">Cars</h4>
+            {categories.map((item) => (
+              <ul key={item.id}>
+                <a href="">
+                  <li className="text-[15px] text-gray-400 font-normal cursor-pointer">
+                    {item.name_en}
+                  </li>
+                </a>
+              </ul>
+            ))}
           </div>
           <div>
             <h4 className="text-[20px] text-warning-100 font-semibold">Blog</h4>

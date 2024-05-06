@@ -1,50 +1,54 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
 import "swiper/css";
+import "swiper/css/grid";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+
+import { Grid, Pagination } from "swiper/modules";
 
 const Brends = () => {
   const [brands, setBrands] = useState([]);
   const urlimg = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/";
+
   const getBrands = () => {
     axios
       .get("https://autoapi.dezinfeksiyatashkent.uz/api/brands")
       .then((response) => {
         setBrands(response.data.data);
-        console.log(response.data.data);
       })
       .catch((err) => {
-        Toast.error(err.message);
+        console.error(err);
       });
   };
+
   useEffect(() => {
     getBrands();
   }, []);
 
-  //  ok
-
   return (
-    <div className=" my-20 py-20 bg-blue-950 shadow-lg shadow-cyan-500/50">
+    <div className=" py-20">
       <div className="container">
         <h4 className="text-[35px] text-gray-100 font-semibold">Brands</h4>
-        <div>
+        <div className="my-20 px-24">
           <Swiper
             slidesPerView={4}
             spaceBetween={5}
             loop={true}
-            aria-colcount={2}
+            grid={{
+              rows: 2,
+            }}
             pagination={{
               clickable: true,
             }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
+            modules={[Grid, Pagination]}
             className="mySwiper"
           >
-            {brands.map((item) => (
-              <SwiperSlide className="py-40 px-40" key={item.id}>
+            <SwiperSlide className="py-40 px-40">
+              {brands.map((item) => (
                 <div
                   className="w-[300px] h-[250px] flex-grow justify-center items-center"
                   key={item.key}
@@ -58,8 +62,17 @@ const Brends = () => {
                     {item.title}
                   </p>
                 </div>
-              </SwiperSlide>
-            ))}
+              ))}
+            </SwiperSlide>
+
+            {/* <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>Slide 5</SwiperSlide>
+            <SwiperSlide>Slide 6</SwiperSlide>
+            <SwiperSlide>Slide 7</SwiperSlide>
+            <SwiperSlide>Slide 8</SwiperSlide>
+            <SwiperSlide>Slide 9</SwiperSlide> */}
           </Swiper>
         </div>
       </div>
