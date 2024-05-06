@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import kia from "../../assets/kia.png";
+import { RightCircleOutlined } from "@ant-design/icons";
+
 export default function Carousel({ title }) {
   const settings = {
     infinite: true,
@@ -26,31 +28,34 @@ export default function Carousel({ title }) {
         },
       },
     ],
-  };
+  };  
   return (
     <div className="Carousel   p-[30px]">
       <div className="container ">
         <div className="flex justify-between p-[20px]">
           <h2 className="text-white text-3xl font-light">{title}</h2>
-          <p className="text-white text-xl font-light">SEE ALL</p>
+         <div className="flex text-white cursor-pointer">
+         <p className="text-white text-xl font-light mr-2 ">SEE ALL</p>
+          <div className="text-xl "><RightCircleOutlined/></div>
+         </div>
         </div>
         <Slider {...settings}>
-          <div className="h-[450px] w-[90%] bg-rebeccapurple rounded-3xl p-[20px] pb-[30px]  flex justify-center items-center hover:bg-gradient-to-br from-gray-600 to-gray-900">
+          <div className="h-[470px] w-[90%] bg-rebeccapurple rounded-3xl p-[20px] pb-[30px]  flex justify-center items-center hover:bg-gradient-to-br from-gray-600 to-gray-900 cursor-pointer">
             <img
-              className="w-80 h-35 object-cover m-[0 auto] mb-[80px] mt-[50px] "
+              className="w-[50%] h-[25%] object-cover ml-[20%] mb-[100px] mt-[70px] "
               src={kia}
               alt=""
             />
-            <h5 className="text-white text-2xl font-light pb-4">Kia K55</h5>
+            <h5 className="text-white text-xl font-light pb-4">Kia K55</h5>
             <hr className="border-white pb-5" />
             <h3 className="text-white text-xl font-light pb-4">
               AED 300 / $ 80{" "}
             </h3>
-            <p className="text-white text-xl font-light pb-4">per day</p>
+            <p className="text-white text-[15px] font-light pb-4">per day</p>
           </div>
           <div className="h-[450px] bg-rebeccapurple rounded-3xl p-[20px] pb-[30px]  flex justify-center items-center hover:bg-gradient-to-br from-gray-600 to-gray-900">
             <img
-              className="w-80 h-35 object-cover m-[0 auto] mb-[80px] mt-[50px] "
+              className="w-[50%] h-[25%] object-cover ml-[20%]  mb-[100px] mt-[70px] "
               src={kia}
               alt=""
             />
@@ -59,12 +64,12 @@ export default function Carousel({ title }) {
             <h3 className="text-white text-xl font-light pb-4">
               AED 300 / $ 80{" "}
             </h3>
-            <p className="text-white text-xl font-light pb-4">per day</p>
+            <p className="text-white text-[15px] font-light pb-4">per day</p>
           </div>
 
           <div className="h-[450px] bg-rebeccapurple rounded-3xl p-[20px] pb-[30px]  flex justify-center items-center hover:bg-gradient-to-br from-gray-600 to-gray-900">
             <img
-              className="w-80 h-35 object-cover m-[0 auto] mb-[80px] mt-[50px] "
+              className="w-[50%] h-[25%] object-cover ml-[20%]  mb-[100px] mt-[70px] "
               src={kia}
               alt=""
             />
