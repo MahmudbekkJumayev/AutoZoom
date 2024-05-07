@@ -1,12 +1,11 @@
 .faq {
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(2, 0, 36, 1) 49%,
-    rgba(2, 0, 36, 1) 59%,
-    rgba(2, 0, 36, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(2, 0, 36, 1) 49%,
+      rgba(2, 0, 36, 1) 59%,
+      rgba(2, 0, 36, 1) 100%);
+
   .faq-box {
     .faq-title {
       margin: 50px 0;
@@ -40,44 +39,37 @@
               .ant-collapse-item {
                 .ant-collapse-header {
 
-          .faq-item_box {
-            max-width: 100%;
-            background-color: aqua;
-            .ant-collapse {
-              .ant-collapse-item {
-                .ant-collapse-header {
-                  background-color: red;
+                  .faq-item_box {
+                    max-width: 100%;
+                    background-color: aqua;
 
-                  & span {
-                    font-size: 24px;
-                    color: #fff;
-                    font-weight: 700;
-                  }
-                }
-
-
-                .ant-collapse-content {
-                  background-color: rgb(14, 14, 66) !important;
-
-
-                .ant-collapse-content {
-                  background-color: rgb(14, 14, 66);
-
-                  & p {
-                    font-size: 18px;
-                    font-weight: 500;
-                    color: #fff;
+                    
                   }
                 }
               }
             }
           }
         }
+
       }
+
     }
   }
-
 }
 
-}
+.ant-collapse {
+  .ant-collapse-item {
+    .ant-collapse-header {
 
+      & span {
+        font-size: 24px;
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+    .ant-collapse-content{
+      background-color: rgb(12, 3, 79);
+    }
+   
+  }
+}
