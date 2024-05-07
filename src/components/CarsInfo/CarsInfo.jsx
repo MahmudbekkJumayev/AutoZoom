@@ -16,15 +16,15 @@ export default function CarsInfo() {
     const [cars, setcars] = useState([])
     const getCars = () => {
         axios
-            .get(`https://autoapi.dezinfeksiyatashkent.uz/api/cars/8bcdc62e-c51c-4ff8-8aa8-bf654d09cd25`)
+            .get(`https://autoapi.dezinfeksiyatashkent.uz/api/cars/${id}`)
             .then((response) => {
                 const carData = response.data.data;
                 console.log(carData.car_images);
                 if (carData && typeof carData === 'object') {
-                  // Convert object to array with a single item
-                  setcars([carData]);
+                    // Convert object to array with a single item
+                    setcars([carData]);
                 } else {
-                  setcars([]); // Set empty array if response is not as expected
+                    setcars([]); // Set empty array if response is not as expected
                 }
             })
             .catch((err) => {
@@ -32,23 +32,6 @@ export default function CarsInfo() {
                 setOneCar([]);
             });
     }
-    // const getImages = () => {
-    //     axios
-    //         .get(`https://autoapi.dezinfeksiyatashkent.uz/api/cars/8bcdc62e-c51c-4ff8-8aa8-bf654d09cd25`)
-    //         .then((response) => {
-    //             const carData = response.data.data;
-    //             if (carData && typeof carData === 'object') {
-    //               // Convert object to array with a single item
-    //               setcars([carData]);
-    //             } else {
-    //               setcars([]); // Set empty array if response is not as expected
-    //             }
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //             setOneCar([]);
-    //         });
-    // }
     useEffect(() => {
         getCars();
         console.log(cars);
@@ -57,7 +40,12 @@ export default function CarsInfo() {
 
     return (
         <div className='container'>
-            <h2 className='text-5xl text-white'>KIA K 5 WHITE</h2>
+            {cars &&
+                cars.map((item, index) => (
+
+                    <h2 className='text-5xl text-white pb-8'> {item.brand.title} {item.model.name}</h2>
+                ))}
+
             <Row>
                 <Col md={3}>
                     <Swiper
@@ -72,16 +60,16 @@ export default function CarsInfo() {
                     >
                         {cars &&
                             cars.map((item, index) => (
-                               <>
-                             {
-                                item.car_images.map((item,index)=>(
-                                    <SwiperSlide key={index}>
-                                    <img src={`${urlimg}${item.image.src}`} alt={`Car ${index}`} />
-                                </SwiperSlide>      
-                                ))  
-                             }
-                               </>
-                                
+                                <>
+                                    {
+                                        item.car_images.map((item, index) => (
+                                            <SwiperSlide key={index} className='cars-swiper'>
+                                                <img src={`${urlimg}${item.image.src}`} alt={`Car ${index}`} />
+                                            </SwiperSlide>
+                                        ))
+                                    }
+                                </>
+
                             ))}
                     </Swiper>
                 </Col>
@@ -97,17 +85,18 @@ export default function CarsInfo() {
                         modules={[FreeMode, Navigation, Thumbs]}
                         className="mySwiper2"
                     >
-                           {cars &&
+                        {cars &&
                             cars.map((item, index) => (
-                               <>
-                                <SwiperSlide key={index}>
-                                    <img src={`${urlimg}${item.car_images[0].image.src}`} alt={`Car ${index}`} />
-                                </SwiperSlide>
-                                <SwiperSlide key={index}>
-                                    <img src={`${urlimg}${item.city.image_src}`} alt={`Car ${index}`} />
-                                </SwiperSlide>
-                               </>
-                                
+                                <>
+                                {
+                                        item.car_images.map((item, index) => (
+                                            <SwiperSlide key={index} className='cars-swiper-two'>
+                                                <img src={`${urlimg}${item.image.src}`} alt={`Car ${index}`} />
+                                            </SwiperSlide>
+                                        ))
+                                    }
+                                </>
+
                             ))}
                     </Swiper>
 

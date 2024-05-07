@@ -5,7 +5,7 @@ import Faq from "../../components/Faq/Faq";
 import Global from "../../components/Global/Global";
 import SuperCar from "../../components/SuperCar/SuperCar";
 import Luxury from "../../components/Luxury/Luxury";
-import MainCarousel from './../../components/Carousel/MainCarousel';
+import Carousel from "../../components/Carousel/Carousel";
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <Header />
       <Brends />
-      <MainCarousel />
+      <Carousel/>
       <Faq/>
       <Global />
       <Luxury />

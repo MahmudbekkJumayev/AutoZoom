@@ -14,7 +14,6 @@ const Brends = () => {
       .get("https://autoapi.dezinfeksiyatashkent.uz/api/brands")
       .then((response) => {
         setBrands(response.data.data);
-        console.log(response.data.data);
       })
       .catch((err) => {
         Toast.error(err.message);

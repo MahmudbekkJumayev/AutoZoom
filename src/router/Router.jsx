@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path: "/carsinfo",
+        path: "/carsinfo/:id",
         element: <CarsInfo />,
         errorElement: <Error />,
       },
