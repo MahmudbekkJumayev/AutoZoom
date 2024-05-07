@@ -3,7 +3,7 @@ import AllCars from "../Buttons/AllCars";
 
 const Global = () => {
   return (
-    <div className="bg-gray-900 my-10 py-20">
+    <div className=" my-10 py-20">
       <div className="container mx-auto px-4 lg:px-0 flex flex-col lg:flex-row justify-center items-center lg:gap-10">
         <div className="lg:w-1/2 xs:w-full">
           <iframe
