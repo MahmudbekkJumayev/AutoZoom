@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import navLogo from "../../assets/icons/autozoom.svg";
 import engFlag from "../../assets/images/engFlagg.jpg";
 import rusFlag from "../../assets/images/russianFlag.png";
+import { useTranslation } from "react-i18next";
 
-const Navbar = () => {
+const Navbar = ({ changeLang }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,21 +18,32 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const changeLangHandler = (e) => {
+    changeLang(e.target.value);
+  };
+
   return (
     <>
       <div className="container flex justify-between items-center">
         <div className="flex justify-center items-center gap-5 top-0 ">
-          <span className="flex justify-center items-center  gap-3">
-            <img
-              src={rusFlag}
-              className="w-9 h-6 cursor-pointer rounded-md"
-              alt="Russian"
-            />
-            <img
-              src={engFlag}
-              className="w-9 h-6 cursor-pointer rounded-md"
-              alt="English"
-            />
+          <span
+            onClick={changeLangHandler}
+            className="flex justify-center items-center  gap-3"
+          >
+            <button onClick={() => changeLang("uz")}>
+              <img
+                src={rusFlag}
+                className="w-9 h-6 cursor-pointer rounded-md"
+                alt="Russian"
+              />
+            </button>
+            <button onClick={() => changeLang("en")}>
+              <img
+                src={engFlag}
+                className="w-9 h-6 cursor-pointer rounded-md"
+                alt="English"
+              />
+            </button>
           </span>
           <div className="w-[350px] hidden md:block">
             <span className="block">
@@ -77,52 +90,52 @@ const Navbar = () => {
             <ul className="flex gap-4">
               <li>
                 <Link
-                  className="md:text-[22px]  text-gray-100  hover:text-blue-300"
+                  className="md:text-[20px]  text-gray-100  hover:text-blue-300"
                   to="/"
                 >
-                  Cars
+                  {t("cars")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className="md:text-[22px] text-gray-100  hover:text-blue-300"
+                  className="md:text-[20px] text-gray-100  hover:text-blue-300"
                   to="/"
                 >
-                  Brand
+                  {t("brand")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className="md:text-[22px] text-gray-100  hover:text-blue-300"
+                  className="md:text-[20px] text-gray-100  hover:text-blue-300"
                   to="/"
                 >
-                  Services
+                  {t("service")}
                 </Link>
               </li>
             </ul>
             <ul className="flex gap-4">
               <li>
                 <Link
-                  className="md:text-[22px] text-gray-100 hover:text-blue-300"
+                  className="md:text-[20px] text-gray-100 hover:text-blue-300"
                   to="/aboutUs"
                 >
-                  About Us
+                  {t("aboutUs")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className="md:text-[22px] text-gray-100  hover:text-blue-300"
+                  className="md:text-[20px] text-gray-100  hover:text-blue-300"
                   to="/contact"
                 >
-                  Contact
+                  {t("contacts")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className="md:text-[22px]  text-gray-100  hover:text-blue-300"
+                  className="md:text-[20px]  text-gray-100  hover:text-blue-300"
                   to="/blog"
                 >
-                  Blog
+                  {t("blogs")}
                 </Link>
               </li>
             </ul>
