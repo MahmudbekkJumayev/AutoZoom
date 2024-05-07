@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Brends = () => {
   const [brands, setBrands] = useState([]);
+  const { t } = useTranslation();
   const urlimg = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/";
 
   const getBrands = () => {
@@ -23,7 +25,9 @@ const Brends = () => {
   return (
     <div className="py-20">
       <div className="container">
-        <h4 className="text-[35px] text-gray-100 font-semibold">Brands</h4>
+        <h4 className="text-[35px] text-gray-100 font-semibold">
+          {t("brand")}
+        </h4>
         <div class="parent py-2- my-20 px-4 md:px-24 w-full  snap-proximity snap-x overflow-x-auto  md:grid-cols-3">
           {brands.map((item) => (
             <div
