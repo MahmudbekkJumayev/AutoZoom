@@ -32,6 +32,7 @@ export default function Carousel({ title }) {
   return (
     <div className="Carousel   p-[30px]">
       <div className="container ">
+
         <div className="flex justify-between p-[20px]">
           <h2 className="text-white text-3xl font-light">{title}</h2>
          <div className="flex text-white cursor-pointer">
@@ -39,6 +40,7 @@ export default function Carousel({ title }) {
           <div className="text-xl "><RightCircleOutlined/></div>
          </div>
         </div>
+        
         <Slider {...settings}>
           <div className="h-[470px] w-[90%] bg-rebeccapurple rounded-3xl p-[20px] pb-[30px]  flex justify-center items-center hover:bg-gradient-to-br from-gray-600 to-gray-900 cursor-pointer">
             <img
@@ -53,6 +55,7 @@ export default function Carousel({ title }) {
             </h3>
             <p className="text-white text-[15px] font-light pb-4">per day</p>
           </div>
+
           <div className="h-[450px] bg-rebeccapurple rounded-3xl p-[20px] pb-[30px]  flex justify-center items-center hover:bg-gradient-to-br from-gray-600 to-gray-900">
             <img
               className="w-[50%] h-[25%] object-cover ml-[20%]  mb-[100px] mt-[70px] "

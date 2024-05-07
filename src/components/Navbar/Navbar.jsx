@@ -75,7 +75,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="md:text-[22px]  text-gray-100  hover:text-blue-300"
-                  to="/"
+                  to="/cars"
                 >
                   Cars
                 </Link>
