@@ -5,8 +5,10 @@ import img2 from "../../assets/images/header3.png";
 import img3 from "../../assets/images/header4.png";
 import img4 from "../../assets/images/header5.png";
 import { Carousel, initTWE } from "tw-elements";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     initTWE({ Carousel });
   }, []);
@@ -14,14 +16,13 @@ const Header = () => {
     <div className="my-[40px]">
       <div className="my-[40px]">
         <h3 className="lg:text-[35px] md:text-[32px] sm:text-[30px] ss:text-[29px] xs:text-[28px] text-gray-100 md:font-semibold xs:font-bold text-center">
-          TOP LUXURY CAR
+          {t("headerText1")}
         </h3>
         <h3 className="lg:text-[35px] md:text-[32px] sm:text-[30px] ss:text-[29px] xs:text-[28px] text-gray-100 md:font-semibold xs:font-bold text-center">
-          RENTAL DUBAI
+          {t("headerText2")}
         </h3>
         <p className="lg:text-[15px] text-gray-100 lg:font-normal text-center">
-          Best sports car & supercar rental Dubai, Exclusive offers on luxury
-          car rental Dubai Cheap price
+          {t("headerTextP")}
         </p>
       </div>
       {/* header carousel */}

@@ -13,12 +13,16 @@ const Home = () => {
     <div>
       <Header />
       <Brends />
-      <Carousel/>
-      <Faq/>
-      <Global />
-      <Luxury />
-      <SuperCar />
+     <Carousel/>
+   
+      <Faq />
 
+
+
+      <Global />
+      <Faq />
+      <SuperCar />
+      <Luxury />
     </div>
   );
 };

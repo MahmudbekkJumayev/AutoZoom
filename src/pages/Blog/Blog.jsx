@@ -15,7 +15,11 @@ const Blog = () => {
         </div>
         <div className="blog-item_box">
           <div className="blog-item">
-            <img src={BlogImageOne} alt="img1" className="imgBlog"/>
+            <img
+              src={BlogImageOne}
+              alt="img1"
+              className="imgBlog rounded-md object-cover"
+            />
             <div className="blog-item_description">
               <h3>Top 3 Destinations to Visit in Dubai in a Rental Car</h3>
               <p>
@@ -31,7 +35,11 @@ const Blog = () => {
             </div>
           </div>
           <div className="blog-item">
-            <img src={BlogImageTwo} alt="img1" />
+            <img
+              src={BlogImageTwo}
+              className="rounded-md object-cover"
+              alt="img1"
+            />
             <div className="blog-item_description">
               <h3>Top 5 wonderful spots for a car photo session in Dubai</h3>
               <p>
@@ -51,7 +59,11 @@ const Blog = () => {
             </div>
           </div>
           <div className="blog-item">
-            <img src={BlogImageThree} alt="img1" />
+            <img
+              src={BlogImageThree}
+              className="rounded-md object-cover"
+              alt="img1"
+            />
             <div className="blog-item_description">
               <h3>Top 5 Reasons to Rent a Car Dubai Style this Summer</h3>
               <p>
