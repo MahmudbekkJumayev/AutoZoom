@@ -6,10 +6,7 @@ import Global from "../../components/Global/Global";
 import SuperCar from "../../components/SuperCar/SuperCar";
 import Luxury from "../../components/Luxury/Luxury";
 
-
-import MainCarousel from './../../components/Carousel/MainCarousel';
-
-
+import MainCarousel from "./../../components/Carousel/MainCarousel";
 
 const Home = () => {
   return (
@@ -17,11 +14,10 @@ const Home = () => {
       <Header />
       <Brends />
       <MainCarousel />
-      <Faq/>
       <Global />
+      <Faq />
       <SuperCar />
       <Luxury />
-      <SuperCar />
     </div>
   );
 };
