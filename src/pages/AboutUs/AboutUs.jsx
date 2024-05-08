@@ -1,77 +1,73 @@
 import React from "react";
 import "./AboutUs.css";
 import carAbout from "../../assets/images/abou-us.png";
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="aboutUs">
       <img src={carAbout} alt="carAbout" />
       <div className="container_acb aboutUs-box">
         <div className="aboutUs-top">
-          <h5>Аренда люксовых и спортивных авто / О нас</h5>
-          <h2>О НАС</h2>
+          <h5>{t("aboutUs.top.toptop")}</h5>
+          <h2>{t("aboutUs.top.topbottom")}</h2>
         </div>
         <div className="aboutUs-middle">
           <div className="aboutUs-middle_top">
-            <h3>
-              Добро пожаловать в Auto Zoom Car Rental Co LLC – Ваш партнер в
-              незабываемых путешествиях по Дубаю!
-            </h3>
-            <p>
-              В мире, где каждая поездка становится приключением, Auto Zoom Car
-              Rental Co LLC предлагает вам уникальный опыт аренды автомобилей в
-              самом сердце Дубая.
-            </p>
+            <h3>{t("aboutUs.middle.title")}</h3>
+            <p>{t("aboutUs.middle.description")}</p>
           </div>
           <div className="aboutUs-middle_middle">
             <div className="aboutUs-middle_middle--title">
-              <h3>Почему Auto Zoom?</h3>
+              <h3>{t("aboutUs.middle.middle_m.title")}</h3>
             </div>
             <div className="aboutUs-middle_middle--description">
               <p>
-                <span>Элегантный Парк Автомобилей:</span>Мы предлагаем вам
-                возможность выбора из нашего роскошного парка автомобилей – от
-                элегантных седанов до мощных внедорожников. У нас есть
-                автомобиль, соответствующий вашему стилю и вашигм потребностям.
+                <span>
+                  {t(
+                    "aboutUs.middle.middle_m.middle_description_p_span.one.span"
+                  )}
+                </span>
+                {t("aboutUs.middle.middle_m.middle_description_p_span.one.p")}
               </p>
               <p>
-                <span>Беззаботная Аренда:</span>Наша цель – сделать вашу поездку
-                максимально удобной. Гибкие условия аренды, возможность заказа с
-                водителем и широкий спектр дополнительных услуг – все это для
-                вашего комфорта.
+                <span>
+                  {t(
+                    "aboutUs.middle.middle_m.middle_description_p_span.two.span"
+                  )}
+                </span>
+                {t("aboutUs.middle.middle_m.middle_description_p_span.two.p")}
+              </p>
+
+              <p>
+                <span>
+                  {t(
+                    "aboutUs.middle.middle_m.middle_description_p_span.three.span"
+                  )}
+                </span>
+                {t("aboutUs.middle.middle_m.middle_description_p_span.three.p")}
               </p>
               <p>
-                <span>Прозрачность и Доверие:</span>Мы ценим каждого клиента,
-                поэтому наши цены честны и прозрачны. Без скрытых платежей, без
-                неожиданных сюрпризов. Доверьтесь нам, и мы сделаем ваш опыт
-                аренды простым и ясным.
-              </p>
-              <p>
-                <span>Сервис на Вашем Уровне:</span>Наша дружелюбная и
-                профессиональная команда готова воплотить ваши идеи в
-                реальность. Мы стремимся не просто предоставить автомобиль, а
-                создать для вас настоящий автомобильный опыт.
+                <span>
+                  {t(
+                    "aboutUs.middle.middle_m.middle_description_p_span.four.span"
+                  )}
+                </span>
+                {t("aboutUs.middle.middle_m.middle_description_p_span.four.p")}
               </p>
             </div>
           </div>
         </div>
         <div className="aboutUs-bottom">
           <div className="aboutUs-bottom_item">
-            <h4>Наша Миссия:</h4>
-            <p>
-              Auto Zoom Car Rental Co LLC создана с одной целью – сделать каждую
-              поездку незабываемой. Мы стремимся предоставить вам не просто
-              автомобиль, а ключ к новым впечатлениям и приключениям.
-            </p>
+            <h4>{t("aboutUs.bottom.itemOne.title")}</h4>
+            <p>{t("aboutUs.bottom.itemOne.description")}</p>
           </div>
           <div className="aboutUs-bottom_item">
-            <h4>Обратитесь к Нам:</h4>
-            <p>
-              Доверьтесь профессионалам – доверьтесь Auto Zoom Car Rental Co
-              LLC. Свяжитесь с нами сегодня, чтобы начать ваше увлекательное
-              путешествие по Дубаю наших стильных и надежных автомобилях.
-              Позвольте себе наслаждаться каждым моментом вашего путешествия.
-            </p>
+            <h4>{t("aboutUs.bottom.itemTwo.title")}</h4>
+            <p>{t("aboutUs.bottom.itemTwo.description")}</p>
           </div>
         </div>
       </div>

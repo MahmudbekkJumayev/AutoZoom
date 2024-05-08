@@ -15,11 +15,9 @@ const Blog = () => {
         </div>
         <div className="blog-item_box">
           <div className="blog-item">
-            <img
-              src={BlogImageOne}
-              alt="img1"
-              className="imgBlog rounded-md object-cover"
-            />
+            <div className="blog-item_img">
+              <img src={BlogImageOne} alt="img1" />
+            </div>
             <div className="blog-item_description">
               <h3>Top 3 Destinations to Visit in Dubai in a Rental Car</h3>
               <p>
