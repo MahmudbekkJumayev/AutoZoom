@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoMenuSharp, IoCloseSharp, IoSearchSharp } from "react-icons/io5";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import navLogo from "../../assets/icons/autozoom.svg";
 import engFlag from "../../assets/images/engFlagg.jpg";
 import rusFlag from "../../assets/images/russianFlag.png";
@@ -10,7 +10,6 @@ const Navbar = ({ changeLang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
-  const history = useHistory();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -24,11 +23,11 @@ const Navbar = ({ changeLang }) => {
     changeLang(e.target.value);
   };
 
-  const handleSearch = (e) => {
-    const searchValue = e.target.value;
-    setSearchTerm(searchValue);
-    history.push(`/search/${searchValue}`);
-  };
+  // const handleSearch = (e) => {
+  //   const searchValue = e.target.value;
+  //   setSearchTerm(searchValue);
+  //   history.push(`/search/${searchValue}`);
+  // };
 
   return (
     <>
@@ -64,8 +63,8 @@ const Navbar = ({ changeLang }) => {
                   className="bg-gradient-to-r top-[-20px] text-white font-bold text-[17px]  sm:px-10 py-10 sm:py-2 text-base sm:text-[15px] absolute from-slate-500 rounded-md h-[40px] sm:w-[300px] to-gray-800"
                   type="text"
                   placeholder="Search"
-                  value={searchTerm}
-                  onChange={handleSearch}
+                  // value={searchTerm}
+                  //onChange={handleSearch}
                 />
               </label>
             </span>
