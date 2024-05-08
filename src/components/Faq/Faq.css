@@ -43,7 +43,7 @@
                     max-width: 100%;
                     background-color: aqua;
 
-                    
+
                   }
                 }
               }
@@ -67,9 +67,10 @@
         font-weight: 700;
       }
     }
-    .ant-collapse-content{
+
+    .ant-collapse-content {
       background-color: rgb(12, 3, 79);
     }
-   
+
   }
 }

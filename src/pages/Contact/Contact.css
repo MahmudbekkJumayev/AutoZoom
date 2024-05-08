@@ -1,13 +1,11 @@
 .contact {
   height: 1000px;
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(2, 0, 36, 1) 49%,
-    rgba(2, 0, 36, 0.8100490196078431) 68%,
-    rgba(2, 0, 36, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(2, 0, 36, 1) 49%,
+      rgba(2, 0, 36, 0.8100490196078431) 68%,
+      rgba(2, 0, 36, 1) 100%);
 
   .contact-box {
     padding-top: 50px;
@@ -36,18 +34,21 @@
       padding-bottom: 20px;
       border-bottom: 3px solid #fff;
       margin-bottom: 20px;
+
       & h3 {
         color: #fff;
         font-size: 24px;
         margin-left: 45px;
         margin-bottom: 10px;
       }
+
       .contact-location_items {
         .contact-location_item {
           padding-bottom: 13px;
           display: flex;
           gap: 25px;
           align-items: center;
+
           & span {
             font-size: 18px;
             color: #fff;
@@ -56,4 +57,16 @@
       }
     }
   }
+}
+
+@media (max-width:530px) {
+  .contact {
+    .contact-box {
+      .contact-title {
+        text-align: center;
+
+      }
+    }
+  }
+
 }

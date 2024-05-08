@@ -119,7 +119,7 @@ const Navbar = ({ changeLang }) => {
                   className="md:text-[20px] text-gray-100 hover:text-blue-300"
                   to="/aboutUs"
                 >
-                  {t("aboutUs")}
+                  {t("aboutUs.nav")}
                 </Link>
               </li>
               <li>
@@ -127,7 +127,7 @@ const Navbar = ({ changeLang }) => {
                   className="md:text-[20px] text-gray-100  hover:text-blue-300"
                   to="/contact"
                 >
-                  {t("contacts")}
+                  {t("contacts.nav")}
                 </Link>
               </li>
               <li>
