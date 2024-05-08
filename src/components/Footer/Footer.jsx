@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useTranslation } from "react-i18next";
 import footerLogo from "../../assets/icons/autozoom.svg";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
+import { FaSquareInstagram, FaFacebook, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const response = await axios.get(
+          "https://autoapi.dezinfeksiyatashkent.uz/api/categories"
+        );
+        const translatedCategories = response.data.data.map((item) => ({
+          id: item.id,
+          name_en: t(item.name_en), // Tarjima qilish
+          name_ru: t(item.name_ru), // Tarjima qilish
+        }));
+        setCategories(translatedCategories);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    getCategories();
+  }, [t]); // `t` til o'zgarishlarida fetch qilinadi
+
   return (
     <div className="container flex flex-col md:flex-row md:items-center">
       <div className="md:mr-10">
@@ -13,15 +36,16 @@ const Footer = () => {
         </span>
         <span>
           <h4 className="text-[25px] text-warning-100 font-semibold">
-            LUXURY CAR
+            {t("luxuryCar")}
           </h4>
           <h4 className="text-[25px] text-warning-100 font-semibold">
-            RENTAL IN
+            {t("rental")}
           </h4>
-          <h4 className="text-[25px] text-warning-100 font-semibold">DUBAI</h4>
+          <h4 className="text-[25px] text-warning-100 font-semibold">
+            {t("dubai")}
+          </h4>
           <p className="text-[15px] text-gray-400 font-medium md:w-[250px] my-5">
-            Rent sports and luxury cars directly without intermediaries. Rent a
-            car in Dubai with Auto Zoom Car Rental - safety and driving pleasure
+            {t("rentalSport")}
           </p>
         </span>
       </div>
@@ -30,47 +54,54 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-evenly md:items-start gap-10">
           <div>
             <h4 className="text-[20px] text-warning-100 font-semibold">Cars</h4>
+            {categories.map((item) => (
+              <ul key={item.id}>
+                <a href="">
+                  <li className="text-[15px] text-gray-400 font-normal cursor-pointer">
+                    {item.name_en} / {item.name_ru}
+                  </li>
+                </a>
+              </ul>
+            ))}
           </div>
           <div>
             <h4 className="text-[20px] text-warning-100 font-semibold">Blog</h4>
             <h4 className="text-[20px] text-warning-100 font-semibold">
-              Service
+              {t("service")}
             </h4>
             <span>
               <h4 className="text-[20px] text-warning-100 font-semibold">
-                Contact
+                {t("contacts")}
               </h4>
               <p className="text-[15px] text-gray-400 font-normal">
-                Elite 3 Sports City, Dubai 26W8 24J, United Arab Emirates
+                {t("eliteSport")}
               </p>
               <p className="text-[15px] text-gray-400 font-normal">
                 <a href="+971 55 8462124">+971 55 8462124</a>
               </p>
               <p className="text-[15px] text-gray-400 font-normal">
-                Working hours: 24/7
+                {t("work")}
               </p>
             </span>
           </div>
           <div>
             <h4 className="text-[20px] text-warning-100 font-semibold">
-              About Us
+              {t("aboutUs")}
             </h4>
             <span>
               <h4 className="text-[20px] text-warning-100 font-semibold">
-                Follow US
+                {t("follow")}
                 <span className="flex justify-center items-center gap-3">
                   <FaSquareInstagram
                     color="gray"
                     size={35}
                     className="cursor-pointer"
                   />
-
                   <FaFacebook
                     color="gray"
                     size={35}
                     className="cursor-pointer"
                   />
-
                   <FaYoutube
                     color="gray"
                     size={35}

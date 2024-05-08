@@ -1,14 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const Brends = () => {
   const [brands, setBrands] = useState([]);
+  const { t } = useTranslation();
   const urlimg = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/";
+
   const getBrands = () => {
     axios
       .get("https://autoapi.dezinfeksiyatashkent.uz/api/brands")
@@ -16,50 +14,34 @@ const Brends = () => {
         setBrands(response.data.data);
       })
       .catch((err) => {
-        Toast.error(err.message);
+        console.error(err);
       });
   };
+
   useEffect(() => {
     getBrands();
   }, []);
 
-  //  ok
-
   return (
-    <div className=" my-20 py-20 bg-blue-950 shadow-lg shadow-cyan-500/50">
+    <div className="py-20">
       <div className="container">
-        <h4 className="text-[35px] text-gray-100 font-semibold">Brands</h4>
-        <div>
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={5}
-            loop={true}
-            aria-colcount={2}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
-          >
-            {brands.map((item) => (
-              <SwiperSlide className="py-40 px-40" key={item.id}>
-                <div
-                  className="w-[300px] h-[250px] flex-grow justify-center items-center"
-                  key={item.key}
-                >
-                  <img
-                    className="bg-gray-950 w-[250px] h-[250px] rounded-md object-contain m-auto"
-                    src={`${urlimg}${item.image_src}`}
-                    alt=""
-                  />
-                  <p className="text-[29px] text-gray-300 mt-5 text-center ">
-                    {item.title}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <h4 className="text-[35px] text-gray-100 font-semibold">
+          {t("brand")}
+        </h4>
+        <div class="parent py-2- my-20 px-4 md:px-24 w-full  snap-proximity snap-x overflow-x-auto  md:grid-cols-3">
+          {brands.map((item) => (
+            <div
+              key={item.key}
+              class="bg-gray-950 w-60 md:w-72 h-60 md:h-72 bg-gradient-to-r cursor-pointer mx-2 md:mx-0 snap-center flex flex-col justify-center items-center hover:from-slate-500 "
+            >
+              <div class="w-32 md:w-40 h-32 md:h-40 object-cover">
+                <img class="w-full h-full" src={`${urlimg}${item.image_src}`} />
+              </div>
+              <p class="text-2xl md:text-3xl text-gray-300 mt-5 text-center">
+                {item.title}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
