@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = ({ changeLang }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
 
   const toggleMenu = () => {
@@ -21,6 +22,12 @@ const Navbar = ({ changeLang }) => {
   const changeLangHandler = (e) => {
     changeLang(e.target.value);
   };
+
+  // const handleSearch = (e) => {
+  //   const searchValue = e.target.value;
+  //   setSearchTerm(searchValue);
+  //   history.push(`/search/${searchValue}`);
+  // };
 
   return (
     <>
@@ -56,6 +63,8 @@ const Navbar = ({ changeLang }) => {
                   className="bg-gradient-to-r top-[-20px] text-white font-bold text-[17px]  sm:px-10 py-10 sm:py-2 text-base sm:text-[15px] absolute from-slate-500 rounded-md h-[40px] sm:w-[300px] to-gray-800"
                   type="text"
                   placeholder="Search"
+                  // value={searchTerm}
+                  //onChange={handleSearch}
                 />
               </label>
             </span>
@@ -90,8 +99,13 @@ const Navbar = ({ changeLang }) => {
             <ul className="flex gap-4">
               <li>
                 <Link
+
+                  className="md:text-[22px]  text-gray-100  hover:text-blue-300"
+                  to="/cars"
+
                   className="md:text-[20px]  text-gray-100  hover:text-blue-300"
                   to="/"
+
                 >
                   {t("cars")}
                 </Link>

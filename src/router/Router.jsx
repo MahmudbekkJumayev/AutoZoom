@@ -6,7 +6,8 @@ import Contact from "../pages/Contact/Contact";
 import Blog from "../pages/Blog/Blog";
 import Home from "../pages/Home/Home";
 import Services from "../pages/services";
-import CarsInfo from "../components/CarsInfo/CarsInfo";
+// import CarsInfo from "../components/CarsInfo/CarsInfo";
+import Cars from "../pages/Cars/Cars";
 
 const router = createBrowserRouter([
   {
@@ -32,16 +33,20 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
         errorElement: <Error />,
-      },      
+      },
       {
         path: "/services",
         element: <Services />,
         errorElement: <Error />,
       },
+      // {
+      //   path: "/carsinfo/:id",
+      //   element: <CarsInfo />,
+      //   errorElement: <Error />,
+      // },
       {
-        path: "/carsinfo",
-        element: <CarsInfo />,
-        errorElement: <Error />,
+        path: "/cars",
+        element: <Cars />,
       },
     ],
   },
