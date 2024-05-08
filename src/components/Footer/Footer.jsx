@@ -3,6 +3,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import footerLogo from "../../assets/icons/autozoom.svg";
 import { FaSquareInstagram, FaFacebook, FaYoutube } from "react-icons/fa6";
+import i18next from "i18next";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -58,7 +59,7 @@ const Footer = () => {
               <ul key={item.id}>
                 <a href="">
                   <li className="text-[15px] text-gray-400 font-normal cursor-pointer">
-                    {item.name_en} / {item.name_ru}
+                    {i18next.language === "en" ? item.name_en : item.name_ru}
                   </li>
                 </a>
               </ul>

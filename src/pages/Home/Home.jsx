@@ -17,7 +17,6 @@ const Home = () => {
       <Brends />
 
       {/* <Carousel/> */}
-      <Faq />
 
       {/* <MainCarousel /> */}
 
