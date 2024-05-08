@@ -7,17 +7,17 @@ import SuperCar from "../../components/SuperCar/SuperCar";
 import Luxury from "../../components/Luxury/Luxury";
 import Carousel from "../../components/Carousel/Carousel";
 
-
 const Home = () => {
   return (
     <div>
       <Header />
       <Brends />
-     <Carousel/>
-   
+
+      {/* <Carousel/> */}
+
+      <Carousel />
+
       <Faq />
-
-
 
       <Global />
       <Faq />
