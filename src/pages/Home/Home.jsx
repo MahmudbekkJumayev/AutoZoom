@@ -5,10 +5,7 @@ import Faq from "../../components/Faq/Faq";
 import Global from "../../components/Global/Global";
 import SuperCar from "../../components/SuperCar/SuperCar";
 import Luxury from "../../components/Luxury/Luxury";
-
-// import Carousel from "../../components/Carousel/Carousel";
-
-// import MainCarousel from "./../../components/Carousel/MainCarousel";
+import Carousel from "../../components/Carousel/Carousel";
 
 const Home = () => {
   return (
@@ -18,7 +15,9 @@ const Home = () => {
 
       {/* <Carousel/> */}
 
-      {/* <MainCarousel /> */}
+      <Carousel />
+
+      <Faq />
 
       <Global />
       <Faq />
