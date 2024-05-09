@@ -55,6 +55,11 @@ export default function Carousel({ title }) {
     return <div>Loading...</div>; // Show loading indicator
   }
 
+  const handleToCars = (id) =>{
+    navigate(`/carsinfo/${id}`)
+    window.scrollTo(0,0)
+  }
+ 
   return (
     <div className="Carousel">
       <div className="container">
@@ -76,7 +81,7 @@ export default function Carousel({ title }) {
               {groupedCars[categoryId].cars.map((car, index) => (
                 <SwiperSlide
                   className=" rounded-3xl  hover:bg-gradient-to-br from-gray-600 to-gray-900 cursor-pointer "
-                  onClick={() => navigate(`/carsinfo/${car.id}`)}
+                  onClick={()=>handleToCars(car.id)}
                 >
                   <div>
                     <img

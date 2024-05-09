@@ -12,15 +12,9 @@ const Home = () => {
     <div>
       <Header />
       <Brends />
-
-      {/* <Carousel/> */}
-
       <Carousel />
-
       <Faq />
-
       <Global />
-      <Faq />
       <SuperCar />
       <Luxury />
     </div>
