@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoMenuSharp, IoCloseSharp, IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import navLogo from "../../assets/icons/autozoom.svg";
 import engFlag from "../../assets/images/engFlagg.jpg";
 import rusFlag from "../../assets/images/russianFlag.png";
 import { useTranslation } from "react-i18next";
+import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import { Dropdown, Space } from "antd";
+import axios from "axios";
 
 const Navbar = ({ changeLang }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [brands, setBrands] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
+  const urlimg = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/";
+
+  useEffect(() => {
+    getBrands();
+  });
+
+  const getBrands = () => {
+    axios
+      .get("https://autoapi.dezinfeksiyatashkent.uz/api/brands")
+      .then((response) => {
+        setBrands(response.data.data);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -96,27 +114,45 @@ const Navbar = ({ changeLang }) => {
           </div>
           {/* Asosiy menu uchun */}
           <div className="hidden md:flex flex-col md:flex-row gap-4">
-            <ul className="flex gap-4">
+            <ul className="flex items-center gap-4">
               <li>
                 <Link
-
-                  className="md:text-[22px]  text-gray-100  hover:text-blue-300"
-                  to="/cars"
-
                   className="md:text-[20px]  text-gray-100  hover:text-blue-300"
-                  to="/"
-
+                  to="/cars"
                 >
                   {t("cars")}
                 </Link>
               </li>
               <li>
-                <Link
-                  className="md:text-[20px] text-gray-100  hover:text-blue-300"
-                  to="/"
+                <Dropdown
+                  placement="bottom"
+                  overlay={
+                    <ul className="grid grid-cols-3 gap-4 bg-[#111219] rounded-xl p-5">
+                      {brands.map((brand) => (
+                        <li key={brand.id}>
+                          <Link
+                            className="text-[27px] md:text-[30px] text-white flex items-center gap-x-3 hover:text-blue-300"
+                            to={`/brand/${brand.id}`}
+                          >
+                            <img
+                              src={urlimg + brand.image_src}
+                              className="w-5 h-5 m-0"
+                              alt=""
+                            />
+                            <p className="m-0">{brand.title}</p>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  }
                 >
-                  {t("brand")}
-                </Link>
+                  <a onClick={(e) => e.preventDefault()}>
+                    <Space className="md:text-[20px]  text-gray-100  hover:text-blue-300">
+                      {t("brand")}
+                      <DownOutlined />
+                    </Space>
+                  </a>
+                </Dropdown>
               </li>
               <li>
                 <Link
@@ -133,7 +169,7 @@ const Navbar = ({ changeLang }) => {
                   className="md:text-[20px] text-gray-100 hover:text-blue-300"
                   to="/aboutUs"
                 >
-                  {t("aboutUs")}
+                  {t("aboutUs.nav")}
                 </Link>
               </li>
               <li>
@@ -141,7 +177,7 @@ const Navbar = ({ changeLang }) => {
                   className="md:text-[20px] text-gray-100  hover:text-blue-300"
                   to="/contact"
                 >
-                  {t("contacts")}
+                  {t("contacts.nav")}
                 </Link>
               </li>
               <li>
@@ -178,12 +214,30 @@ const Navbar = ({ changeLang }) => {
             </Link>
           </li>
           <li>
-            <Link
-              className="text-[27px] md:text-xl text-white  hover:text-blue-300"
-              to="/"
+            import axios from "axios";
+            <Dropdown
+              overlay={
+                <ul className="flex flex-col gap-4">
+                  {brands.map((brand) => (
+                    <li key={brand.id}>
+                      <Link
+                        className="text-[27px] md:text-[30px] text-white  hover:text-blue-300"
+                        to={`/brand/${brand.id}`}
+                      >
+                        {brand.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              }
             >
-              Brand
-            </Link>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  Brand
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
           </li>
           <li>
             <Link
