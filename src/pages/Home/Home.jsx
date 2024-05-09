@@ -17,8 +17,6 @@ const Home = () => {
    
       <Faq />
 
-
-
       <Global />
       <Faq />
       <SuperCar />
