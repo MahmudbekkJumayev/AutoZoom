@@ -104,7 +104,7 @@ const Navbar = ({ changeLang }) => {
                   to="/cars"
 
                   className="md:text-[20px]  text-gray-100  hover:text-blue-300"
-                  to="/"
+                  to="/cars"
 
                 >
                   {t("cars")}
