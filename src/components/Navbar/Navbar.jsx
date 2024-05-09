@@ -41,12 +41,6 @@ const Navbar = ({ changeLang }) => {
     changeLang(e.target.value);
   };
 
-  // const handleSearch = (e) => {
-  //   const searchValue = e.target.value;
-  //   setSearchTerm(searchValue);
-  //   history.push(`/search/${searchValue}`);
-  // };
-
   return (
     <>
       <div className="container flex justify-between items-center">
@@ -81,8 +75,6 @@ const Navbar = ({ changeLang }) => {
                   className="bg-gradient-to-r top-[-20px] text-white font-bold text-[17px]  sm:px-10 py-10 sm:py-2 text-base sm:text-[15px] absolute from-slate-500 rounded-md h-[40px] sm:w-[300px] to-gray-800"
                   type="text"
                   placeholder="Search"
-                  // value={searchTerm}
-                  //onChange={handleSearch}
                 />
               </label>
             </span>
@@ -92,7 +84,7 @@ const Navbar = ({ changeLang }) => {
           <a href="/">
             <img
               src={navLogo}
-              className="lg:w-52 lg:h-52 md:w-48 md:h-48  sm:w-44 sm:h-44 ss:w-44 ss:h-44 xs:w-44 xs:h-44   object-fill  "
+              className="lg:w-48 lg:h-48 md:w-44 md:h-44  sm:w-40 sm:h-40 ss:w-36 ss:h-36 xs:w-32 xs:h-32   object-fill  "
               alt="Autozoom"
             />
           </a>
@@ -117,13 +109,21 @@ const Navbar = ({ changeLang }) => {
             <ul className="flex items-center gap-4">
               <li>
                 <Link
-                  className="md:text-[20px]  text-gray-100  hover:text-blue-300"
+
+                  className="md:text-[17px]  text-gray-100  hover:text-blue-300"
+
+                  
                   to="/cars"
                 >
                   {t("cars")}
                 </Link>
               </li>
               <li>
+
+                <Link
+                  className="md:text-[17px] text-gray-100  hover:text-blue-300"
+                  to="/"
+
                 <Dropdown
                   placement="bottom"
                   overlay={
@@ -145,6 +145,7 @@ const Navbar = ({ changeLang }) => {
                       ))}
                     </ul>
                   }
+
                 >
                   <a onClick={(e) => e.preventDefault()}>
                     <Space className="md:text-[20px]  text-gray-100  hover:text-blue-300">
@@ -156,7 +157,7 @@ const Navbar = ({ changeLang }) => {
               </li>
               <li>
                 <Link
-                  className="md:text-[20px] text-gray-100  hover:text-blue-300"
+                  className="md:text-[17px] text-gray-100  hover:text-blue-300"
                   to="/"
                 >
                   {t("service")}
@@ -166,7 +167,7 @@ const Navbar = ({ changeLang }) => {
             <ul className="flex gap-4">
               <li>
                 <Link
-                  className="md:text-[20px] text-gray-100 hover:text-blue-300"
+                  className="md:text-[17px] text-gray-100 hover:text-blue-300"
                   to="/aboutUs"
                 >
                   {t("aboutUs.nav")}
@@ -174,7 +175,7 @@ const Navbar = ({ changeLang }) => {
               </li>
               <li>
                 <Link
-                  className="md:text-[20px] text-gray-100  hover:text-blue-300"
+                  className="md:text-[17px] text-gray-100  hover:text-blue-300"
                   to="/contact"
                 >
                   {t("contacts.nav")}
@@ -182,7 +183,7 @@ const Navbar = ({ changeLang }) => {
               </li>
               <li>
                 <Link
-                  className="md:text-[20px]  text-gray-100  hover:text-blue-300"
+                  className="md:text-[17px]  text-gray-100  hover:text-blue-300"
                   to="/blog"
                 >
                   {t("blogs")}

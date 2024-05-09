@@ -9,14 +9,7 @@
 }
 
 body {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgb(1, 0, 16) 0%,
-    rgb(0, 0, 4) 49%,
-    rgb(1, 0, 18) 59%,
-    rgb(1, 0, 9) 100%
-  );
+  background: rgb(1, 0, 12);
 }
 
 .container {
@@ -33,7 +26,8 @@ body {
 }
 
 .parent::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 .parent::-webkit-scrollbar-track {
