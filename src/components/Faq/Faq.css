@@ -1,24 +1,8 @@
 .faq {
-  background: rgb(2, 0, 36);
-
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(2, 0, 36, 1) 49%,
-    rgba(2, 0, 36, 1) 59%,
-    rgba(2, 0, 36, 1) 100%
-  );
 }
 .faq-box {
   .faq-title {
     margin: 50px 0;
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(2, 0, 36, 1) 49%,
-      rgba(2, 0, 36, 1) 59%,
-      rgba(2, 0, 36, 1) 100%
-    );
   }
 }
 
@@ -73,10 +57,10 @@
               }
 
               .ant-collapse-content {
-                background-color: rgb(14, 14, 66) !important;
+                background-color: rgb(5, 5, 32) !important;
 
                 .ant-collapse-content {
-                  background-color: rgb(14, 14, 66);
+                  background-color: rgb(5, 5, 32);
 
                   & p {
                     font-size: 18px;
@@ -87,7 +71,6 @@
                   .faq-item_box {
                     max-width: 100%;
                     background-color: aqua;
-
                   }
                 }
               }
@@ -109,15 +92,12 @@
       }
     }
 
-
     .ant-collapse-content {
-      background-color: rgb(12, 3, 79);
+      background-color: rgb(5, 5, 32);
     }
 
-
     .ant-collapse-content {
-      background-color: rgb(12, 3, 79);
+      background-color: rgb(5, 5, 32);
     }
-
   }
 }
