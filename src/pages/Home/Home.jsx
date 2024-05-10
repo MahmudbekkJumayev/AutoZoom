@@ -6,23 +6,22 @@ import Global from "../../components/Global/Global";
 import SuperCar from "../../components/SuperCar/SuperCar";
 import Luxury from "../../components/Luxury/Luxury";
 import Carousel from "../../components/Carousel/Carousel";
+import Services from "../services/Services";
 
 const Home = () => {
   return (
     <div>
       <Header />
       <Brends />
-
-      {/* <Carousel/> */}
-
       <Carousel />
 
       <Faq />
 
       <Global />
-      <Faq />
       <SuperCar />
       <Luxury />
+      <Services />
+      <Location />
     </div>
   );
 };
