@@ -14,8 +14,10 @@ const Home = () => {
       <Header />
       <Brends />
       <Carousel />
-      <Global />
+
       <Faq />
+
+      <Global />
       <SuperCar />
       <Luxury />
       <Services />

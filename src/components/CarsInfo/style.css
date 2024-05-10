@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 /* General styles for Swiper containers */
 .mySwiper {
     width: 100%;
@@ -48,4 +47,40 @@
 .mySwiper .swiper-slide-thumb-active {
     opacity: 1;
 }
->>>>>>> d00811a (cars)
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+.swiper-slide {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.cars-swiper-two img{
+    width: 500px;
+    height: 450px;
+    object-fit: initial;
+    margin-top: -50px;
+}
+.cars-swiper{
+    padding: 0 ;
+    margin-bottom: 20px !important;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    cursor: pointer;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    transition: .8s ease;
+    box-shadow: rgb(214, 196, 196) 0px 0px 10px;
+}
+
