@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import { IoMenuSharp, IoCloseSharp, IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";

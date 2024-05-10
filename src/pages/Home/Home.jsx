@@ -19,7 +19,7 @@ const Home = () => {
       <SuperCar />
       <Luxury />
       <Services />
-      <Location />
+      {/* <Location /> */}
     </div>
   );
 };
