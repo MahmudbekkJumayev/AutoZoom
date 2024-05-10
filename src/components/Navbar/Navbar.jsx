@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = ({ changeLang }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
 
   const toggleMenu = () => {
@@ -108,7 +107,7 @@ const Navbar = ({ changeLang }) => {
               <li>
                 <Link
                   className="md:text-[17px] text-gray-100  hover:text-blue-300"
-                  to="/"
+                  to="/services"
                 >
                   {t("service")}
                 </Link>
