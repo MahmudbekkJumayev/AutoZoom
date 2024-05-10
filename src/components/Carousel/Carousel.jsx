@@ -34,16 +34,16 @@ export default function Carousel({ title }) {
     const groupedCars = {};
 
     cars.forEach((car) => {
-      const categoryId = car.category.id;
+      const categoryId = car?.category?.id;
 
       if (!groupedCars[categoryId]) {
         groupedCars[categoryId] = {
-          categoryName: car.category.name_en,
+          categoryName: car?.category?.name_en,
           cars: [],
         };
       }
 
-      groupedCars[categoryId].cars.push(car);
+      groupedCars[categoryId]?.cars?.push(car);
     });
 
     return groupedCars;
@@ -67,7 +67,7 @@ export default function Carousel({ title }) {
           <div key={categoryId}>
             <div className="flex justify-between p-[20px]">
               <h2 className="text-white text-3xl font-light">
-                {groupedCars[categoryId].categoryName.toUpperCase()} RENTAL
+                {groupedCars[categoryId]?.categoryName.toUpperCase()} RENTAL
                 DUBAI
               </h2>
               <div className="flex text-white cursor-pointer">
@@ -78,10 +78,10 @@ export default function Carousel({ title }) {
               </div>
             </div>
             <Swiper slidesPerView={3} spaceBetween={30}>
-              {groupedCars[categoryId].cars.map((car, index) => (
+              {groupedCars[categoryId]?.cars.map((car, index) => (
                 <SwiperSlide
                   className=" rounded-3xl  hover:bg-gradient-to-br from-gray-600 to-gray-900 cursor-pointer "
-                  onClick={()=>handleToCars(car.id)}
+                  onClick={()=>handleToCars(car?.id)}
                 >
                   <div>
                     <img
@@ -101,7 +101,7 @@ export default function Carousel({ title }) {
                     </h3>
                     <p className="text-white text-[15px] font-light">per day</p>
                   </div>
-                </SwiperSlide>
+                </SwiperSlide >
               ))}
             </Swiper>
           </div>
