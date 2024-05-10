@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd'
+import { Col, Row, message } from 'antd'
 import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -23,11 +23,13 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import automatik from '../../assets/icons/automat.svg'
 import wheel from '../../assets/icons/whel.svg'
+import SimilarCars from './SimilarCars';
 
 export default function CarsInfo() {
     const { id } = useParams();
     const urlimg = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/";
     const [cars, setcars] = useState([])
+    const [loading, setLoading] = useState(false);
     const getCars = () => {
         axios
             .get(`https://autoapi.dezinfeksiyatashkent.uz/api/cars/${id}`)
@@ -51,7 +53,39 @@ export default function CarsInfo() {
         console.log(cars);
     }, [id]);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const sendMessage = async (event) => {
+        event.preventDefault();
 
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const period = document.getElementById("period").value;
+        const detail = document.getElementById("detail").value;
+
+        if (!name || !phone || !period || !detail) {
+            message.error("Please fill out all required fields.");
+            return;
+        }
+
+        setLoading(true);
+
+        const token = "7166835479:AAGoURx4dH-h52x_sWqqf1nxEo6ikMgsxqA";
+        const chat_id = -1002053357956;
+        const url = `https://api.telegram.org/bot${token}/sendMessage`;
+        const messageContent = `Ismi: ${name}\nTelefon raqami: ${phone}\nPeriod: ${period}\nDetail: ${detail}`;
+
+        try {
+            await axios.post(url, {
+                chat_id: chat_id,
+                text: messageContent,
+            });
+            message.success("Message sent successfully!");
+            document.getElementById("myForm").reset();
+        } catch (error) {
+            message.error("Failed to send message. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
+    };
     return (
         <div className='container'>
             {cars &&
@@ -117,15 +151,15 @@ export default function CarsInfo() {
                             </Swiper>
                         </Col>
                         {cars &&
-                cars.map((item, index) => (
-                   <div className='w-[80%]'>
-                     <h3 className='text-3xl text-white mb-8 font-bold'> Good to know about {item.brand.title} {item.model.name}</h3>
-                     <p className='text-gray-500 text-[13px]'>Kilometrage limit per day</p>
-                     <h4 className='text-xl text-white font-bold pb-5'> {item.limitperday} (Every extra km will be charged 20 AED/km)</h4>
-                     <p className='text-gray-500 text-[13px]'>Car rental deposit amount</p>
-                     <h4 className='text-xl text-white font-bold'> {item.limitperday} (Every extra km will be charged 20 AED/km)</h4>
-                   </div>
-                ))}
+                            cars.map((item, index) => (
+                                <div className='w-[80%]'>
+                                    <h3 className='text-3xl text-white mb-8 font-bold'> Good to know about {item.brand.title} {item.model.name}</h3>
+                                    <p className='text-gray-500 text-[13px]'>Kilometrage limit per day</p>
+                                    <h4 className='text-xl text-white font-bold pb-5'> {item.limitperday} (Every extra km will be charged 20 AED/km)</h4>
+                                    <p className='text-gray-500 text-[13px]'>Car rental deposit amount</p>
+                                    <h4 className='text-xl text-white font-bold'> {item.limitperday} (Every extra km will be charged 20 AED/km)</h4>
+                                </div>
+                            ))}
 
                     </Row>
                 </Col>
@@ -218,24 +252,29 @@ export default function CarsInfo() {
 
                                     </div>
                                     <div className='border border-white p-8 w-[80%] mt-10 m-auto'>
-                                     <input type="text" className='w-[100%] h-[60px] p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Name'/>
-                                     <input type="text" className='w-[100%] h-[60px] p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Phone'/>
-                                     <input type="text" className='w-[100%] h-[60px] p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Period'/>
-                                     <input type="text" className='w-[100%] h-[60px] p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Details'/>
-                                     <button className='w-[100px] h-[60px] bg-red-600 text-white font-bold text-xl'>SEND</button>
+                                        <form id='myForm'>
+                                            <input required type="text" className='w-full h-16 p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Name' id="name" />
+                                            <input type="text" className='w-full h-16 p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Phone' id="phone" required />
+                                            <input type="text" className='w-full h-16 p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Period' id="period" required />
+                                            <input type="text" className='w-full h-16 p-5 outline-none bg-gray-500 border border-gray-200 mb-4' placeholder='Details' id="detail" required />
+                                            <button
+                                                className='w-32 h-16 bg-red-600 text-white font-bold text-xl'
+                                                onClick={sendMessage}
+                                                disabled={loading} // Disable button while loading
+                                            >
+                                                {loading ? "SENDING..." : "SEND"}
+                                            </button>
+                                        </form>
                                     </div>
                                     <p className='text-gray-500 text-[13px] mt-20'>The price doesn't include additional 5% VAT.</p>
                                     <p className='text-gray-500 text-[13px] '>There is a 3% transaction fee when paying by credit/debit card.</p>
                                     <p className='text-gray-500 text-[13px] '>There is a 7% transaction fee when paying with American Express.</p>
                                 </div>
                             </>
-
-
                         ))}
-
                 </Col>
             </Row>
-
+            <SimilarCars />
         </div>
     )
 }
