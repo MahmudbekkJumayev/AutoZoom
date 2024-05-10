@@ -70,7 +70,7 @@ const Navbar = ({ changeLang }) => {
               <label className="relative">
                 <IoSearchSharp
                   color="white"
-                  className="top-[-14px] w-10 h-10 left-0  absolute z-10"
+                  className="top-[-18px] w-10 h-10 left-0  absolute z-10"
                 />
                 <input
                   className="bg-gradient-to-r top-[-20px] text-white font-bold text-[17px]  sm:px-10 py-10 sm:py-2 text-base sm:text-[15px] absolute from-slate-500 rounded-md h-[40px] sm:w-[300px] to-gray-800"

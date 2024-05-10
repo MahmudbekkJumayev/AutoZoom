@@ -91,15 +91,15 @@
 .cars_main_container {
     display: grid;
     flex-grow: 1;
+    justify-content: center;
     height: fit-content;
     min-width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 }
 
 .car_main {
-    width: 100%;
+    width: 405px;
     height: fit-content;
-    padding: 30px 25px;
 }
 
 .car_main_port {
