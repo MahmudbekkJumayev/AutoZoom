@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import "./Cars.css";
 import axios from "axios";
@@ -18,7 +19,7 @@ const Cars = () => {
     GetBrands();
     GetModels();
     GetCars();
-  }, []);
+  }, [brandId]);
 
   // Get tpye of cars
   const GetCarType = () => {
@@ -43,7 +44,6 @@ const Cars = () => {
   };
 
   // Get Models
-
   const GetModels = () => {
     axios
       .get("https://autoapi.dezinfeksiyatashkent.uz/api/models")
@@ -54,22 +54,22 @@ const Cars = () => {
   };
 
   // Get cars
-
   const GetCars = () => {
     axios
       .get("https://autoapi.dezinfeksiyatashkent.uz/api/cars")
       .then((response) => {
-        setCars(response.data.data);
+        const fetchedCars = response.data.data;
+        if (brandId) {
+          const filteredCars = fetchedCars.filter(
+            (car) => car.brand_id === brandId
+          );
+          setCars(filteredCars);
+        } else {
+          setCars(fetchedCars);
+        }
       })
       .catch((error) => console.log(error));
   };
-
-  useEffect(() => {
-    const filteredCars = brandId
-      ? cars.filter((car) => car.brand_id === parseInt(brandId))
-      : cars;
-    setCars(filteredCars);
-  }, []);
 
   return (
     <div className="car_container bg-[#1E1F27]">
@@ -170,7 +170,7 @@ const Cars = () => {
         </div>
       </form>
 
-      <div className="flex flex-col flex-grow py-[70px]">
+      <div className="flex flex-col flex-grow pl-[25px] py-[70px]">
         <p className="pl-[25px] text-[15px] text-[#6a6a6a] cursor-pointer">
           Luxury Cars for Rent in Dubai / Hire the latest supercar
         </p>
