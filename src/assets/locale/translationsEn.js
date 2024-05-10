@@ -129,8 +129,13 @@ const translationsEn = {
   superCar: " SUPERCAR RENTAL DUBAI",
   superCartext:
     " Rent the newest supercar. Cruise the streets of Dubai with our best quality and fastest cars.",
-  carButton: "All Cars",
-
+  carButton: "Cars",
+  servis1Tittle: "Sports Car Rental Dubai Style Tour in Dubai",
+  servisP:
+    "Experience the thrill of a dune buggy tour in Dubai with us. We offer free hotel pick-up & drop-off service. Book now!",
+  servis2Tittle: "Photoshoot with luxury car rental Dubai",
+  servis2P:
+    "Professional car photoshoot as an additional type of service at Auto Zoom Car Rental",
 };
 
 export default translationsEn;

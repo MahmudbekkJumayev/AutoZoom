@@ -6,6 +6,7 @@ import Global from "../../components/Global/Global";
 import SuperCar from "../../components/SuperCar/SuperCar";
 import Luxury from "../../components/Luxury/Luxury";
 import Carousel from "../../components/Carousel/Carousel";
+import Services from "../services/Services";
 
 const Home = () => {
   return (
@@ -13,10 +14,14 @@ const Home = () => {
       <Header />
       <Brends />
       <Carousel />
+
       <Faq />
+
       <Global />
       <SuperCar />
       <Luxury />
+      <Services />
+      <Location />
     </div>
   );
 };
