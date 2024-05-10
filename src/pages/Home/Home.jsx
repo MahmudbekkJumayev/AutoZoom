@@ -14,9 +14,7 @@ const Home = () => {
       <Header />
       <Brends />
       <Carousel />
-
       <Faq />
-
       <Global />
       <SuperCar />
       <Luxury />
