@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import { IoMenuSharp, IoCloseSharp, IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -109,51 +110,46 @@ const Navbar = ({ changeLang }) => {
             <ul className="flex items-center gap-4">
               <li>
                 <Link
-
                   className="md:text-[17px]  text-gray-100  hover:text-blue-300"
-
-                  
                   to="/cars"
                 >
                   {t("cars")}
                 </Link>
               </li>
               <li>
-
                 <Link
                   className="md:text-[17px] text-gray-100  hover:text-blue-300"
                   to="/"
-
-                <Dropdown
-                  placement="bottom"
-                  overlay={
-                    <ul className="grid grid-cols-3 gap-4 bg-[#111219] rounded-xl p-5">
-                      {brands.map((brand) => (
-                        <li key={brand.id}>
-                          <Link
-                            className="text-[27px] md:text-[30px] text-white flex items-center gap-x-3 hover:text-blue-300"
-                            to={`/brand/${brand.id}`}
-                          >
-                            <img
-                              src={urlimg + brand.image_src}
-                              className="w-5 h-5 m-0"
-                              alt=""
-                            />
-                            <p className="m-0">{brand.title}</p>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  }
-
                 >
-                  <a onClick={(e) => e.preventDefault()}>
-                    <Space className="md:text-[20px]  text-gray-100  hover:text-blue-300">
-                      {t("brand")}
-                      <DownOutlined />
-                    </Space>
-                  </a>
-                </Dropdown>
+                  <Dropdown
+                    placement="bottom"
+                    overlay={
+                      <ul className="grid grid-cols-3 gap-4 bg-[#111219] rounded-xl p-5">
+                        {brands.map((brand) => (
+                          <li key={brand.id}>
+                            <Link
+                              className="text-[27px] md:text-[30px] text-white flex items-center gap-x-3 hover:text-blue-300"
+                              to={`/cars/${brand.id}`}
+                            >
+                              <img
+                                src={urlimg + brand.image_src}
+                                className="w-5 h-5 m-0"
+                                alt=""
+                              />
+                              <p className="m-0">{brand.title}</p>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    }
+                  >
+                    <a onClick={(e) => e.preventDefault()}>
+                      <Space className="md:text-[17px]  text-gray-100  hover:text-blue-300">
+                        {t("brand")}
+                      </Space>
+                    </a>
+                  </Dropdown>
+                </Link>
               </li>
               <li>
                 <Link
