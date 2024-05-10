@@ -1,0 +1,51 @@
+<<<<<<< HEAD
+=======
+/* General styles for Swiper containers */
+.mySwiper {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Styles for each slide in the Swiper */
+.cars-swiper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff; /* Background color for the slide */
+}
+
+/* Styles for images within Swiper slides */
+.cars-swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the entire container */
+}
+
+/* Additional Swiper container */
+.mySwiper2 {
+    width: 100%;
+    height: 100%; /* Adjust height as needed */
+}
+
+/* Styles for images within the second Swiper */
+.cars-swiper-two img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the entire container */
+}
+
+/* Adjust the opacity of inactive slides */
+.mySwiper .cars-swiper {
+    opacity: 0.5;
+}
+
+/* Adjust the opacity of the active slide */
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+>>>>>>> d00811a (cars)
