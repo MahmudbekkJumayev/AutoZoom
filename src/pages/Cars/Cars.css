@@ -62,12 +62,19 @@
     margin-bottom: 14px;
 }
 
+.car_offers-list .car_offers-item input,
+.car_type_list .car_type_item input,
+.car_brand_list .car_brand_item input {
+    cursor: pointer;
+}
+
 .car_offers-list .car_offers-item label,
 .car_type_list .car_type_item label,
 .car_brand_list .car_brand_item label {
     font-size: 18px;
     color: #FFFFFF;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .car_model .car_model_select {

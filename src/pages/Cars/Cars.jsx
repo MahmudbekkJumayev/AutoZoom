@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Cars.css";
 import axios from "axios";
 import { FaTelegram, FaWhatsapp } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Cars = () => {
   const [carType, setCarType] = useState([]);
   const [brands, setBrands] = useState([]);
   const [cars, setCars] = useState([]);
   const [models, setModels] = useState([]);
+  const { brandId } = useParams();
 
   const urlimg = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/";
 
@@ -63,6 +64,13 @@ const Cars = () => {
       .catch((error) => console.log(error));
   };
 
+  useEffect(() => {
+    const filteredCars = brandId
+      ? cars.filter((car) => car.brand_id === parseInt(brandId))
+      : cars;
+    setCars(filteredCars);
+  }, []);
+
   return (
     <div className="car_container bg-[#1E1F27]">
       <form className="cars_sidebar_container">
@@ -74,36 +82,42 @@ const Cars = () => {
 
             <ul className="car_offers-list">
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer1" />
+                <label htmlFor="offer1">
+                  3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE
+                </label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer2" />
+                <label htmlFor="offer2">3 DAYS RENT = 1300 AED🔥 ()</label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer3" />
+                <label htmlFor="offer3">3 DAYS RENT = 1800 AED🔥</label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer4" />
+                <label htmlFor="offer4">NO DEPOSIT</label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer5" />
+                <label htmlFor="offer5">5000 AED🔥 ALL INCLUSIVE</label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer6" />
+                <label htmlFor="offer6">
+                  2 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE
+                </label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer7" />
+                <label htmlFor="offer7">Rent Ferrari Dubai</label>
               </li>
               <li className="car_offers-item">
-                <input type="checkbox" />
-                <label htmlFor="">3 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE</label>
+                <input type="checkbox" id="offer8" />
+                <label htmlFor="offer8">
+                  4 DAYS RENT = 5000 AED🔥 ALL INCLUSIVE
+                </label>
               </li>
             </ul>
           </div>
@@ -115,8 +129,8 @@ const Cars = () => {
               {carType &&
                 carType.map((item, index) => (
                   <li className="car_type_item" key={index}>
-                    <input type="checkbox" />
-                    <label htmlFor="">{item?.name_en}</label>
+                    <input type="checkbox" id={`type${index}`} />
+                    <label htmlFor={`type${index}`}>{item?.name_en}</label>
                   </li>
                 ))}
             </ul>
@@ -129,8 +143,8 @@ const Cars = () => {
               {brands &&
                 brands.map((item, index) => (
                   <li className="car_brand_item" key={index}>
-                    <input type="checkbox" />
-                    <label htmlFor="">{item.title}</label>
+                    <input type="checkbox" id={`brand${index}`} />
+                    <label htmlFor={`brand${index}`}>{item.title}</label>
                   </li>
                 ))}
             </ul>

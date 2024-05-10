@@ -32,11 +32,11 @@ const Brends = () => {
           {brands.map((item) => (
             <div
               key={item.id}
-              className="bg-gray-950 w-60 md:w-72 h-60 md:h-72 bg-gradient-to-r cursor-pointer mx-2 md:mx-0 snap-center flex flex-col justify-center items-center hover:from-slate-500 "
+              className="bg-gray-950 w-60 md:w-60 h-56 md:h-72 bg-gradient-to-r cursor-pointer mx-2 md:mx-0 snap-center flex flex-col justify-center items-center hover:from-slate-500 "
             >
-              <div className="w-32 md:w-40 h-32 md:h-40 object-cover">
+              <div className="w-24 md:w-40 h-32 md:h-40 object-cover">
                 <img
-                  className="w-full h-full"
+                  className="w-[70%] h-[70%] m-auto"
                   src={`${urlimg}${item.image_src}`}
                 />
               </div>

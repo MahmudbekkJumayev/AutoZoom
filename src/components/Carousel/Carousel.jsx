@@ -4,6 +4,7 @@ import "swiper/swiper-bundle.css"; // Import Swiper styles
 import { RightCircleOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./style.css";
+
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Carousel({ title }) {
@@ -77,6 +78,7 @@ export default function Carousel({ title }) {
                 </div>
               </div>
             </div>
+
             <Swiper slidesPerView={3} spaceBetween={30}>
               {groupedCars[categoryId]?.cars.map((car, index) => (
                 <SwiperSlide
@@ -94,6 +96,10 @@ export default function Carousel({ title }) {
                     </h5>
                     <hr className="border-white pb-5" />
                     <h3 className="text-white text-xl font-light pb-4">
+                      <span>AED {car.price_in_aed}</span>{" "}
+                      <span className="text-gray-500">
+                        / $ {car.price_in_usd}
+                      </span>
                       <span>AED {car.price_in_aed}</span>{" "}
                       <span className="text-gray-500">
                         / $ {car.price_in_usd}

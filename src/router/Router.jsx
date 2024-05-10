@@ -5,9 +5,10 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import Contact from "../pages/Contact/Contact";
 import Blog from "../pages/Blog/Blog";
 import Home from "../pages/Home/Home";
-import Services from "../pages/services";
+import Services from "../pages/services/Services";
 import CarsInfo from "../components/CarsInfo/CarsInfo";
 import Cars from "../pages/Cars/Cars";
+import Location from "../components/Location/Location";
 
 const router = createBrowserRouter([
   {
@@ -22,30 +23,29 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <AboutUs />,
-        errorElement: <Error />,
       },
       {
         path: "/contact",
         element: <Contact />,
-        errorElement: <Error />,
       },
       {
         path: "/blog",
         element: <Blog />,
-        errorElement: <Error />,
       },
       {
         path: "/services",
         element: <Services />,
-        errorElement: <Error />,
       },
       {
         path: "/carsinfo/:id",
         element: <CarsInfo />,
-        errorElement: <Error />,
       },
       {
         path: "/cars",
+        element: <Cars />,
+      },
+      {
+        path: "/cars/:brandId",
         element: <Cars />,
       },
     ],
